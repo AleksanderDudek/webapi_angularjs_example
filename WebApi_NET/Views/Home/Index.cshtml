@@ -1,0 +1,87 @@
+﻿@{    Layout = null; }
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MobilePostService Client Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/angular.min.js")
+    @Scripts.Render("~/Scripts/angular-route.min.js")
+    @Scripts.Render("~/Scripts/angular-resource.min.js")
+    @Scripts.Render("~/Scripts/App/module.js")
+    @Scripts.Render("~/Scripts/App/controller.js")
+    @Scripts.Render("~/Scripts/App/service.js")
+
+
+
+    <style>
+        table, tr, td, th {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+
+
+<body ng-app="APIModule" ng-controller="APIController">
+    <div class="row">
+        <div class="col-md-7">
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>CITY</th>
+                    <th>STREET</th>
+                    <th>POSTAL CODE</th>
+                    <th>PHONE NR</th>
+                    <th>EMAIL</th>
+                    <th>REGISTRATION DATE</th>
+
+
+
+
+                </tr>
+                <tbody data-ng-repeat="par in parcel">
+                    <tr>
+                        <td>{{par.Name}}</td>
+                        <td>{{par.City}}</td>
+                        <td>{{par.Street}}</td>
+                        <td>{{par.PostalCode}}</td>
+                        <td>{{par.Phone}}</td>
+                        <td>{{par.Email}}</td>
+                        <td>{{par.RegistrationDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            @*<br /> <input type="button" ng-click="/new" value="Nowa paczka" />*@
+            @*<a href="/">NOWA PACZKA</a>*@
+        </div>
+        <div class="col-md-4">
+          <form ng-submit="addParcel()">
+              <table>
+                  <tr>      <td>Name</td>      <td colspan=2><input type="text" ng-model="Name" /></td>    </tr>
+                  <tr>      <td>City</td>      <td colspan=2><input type="text" ng-model="City" /></td>    </tr>
+                  <tr>      <td>Street</td>     <td colspan=2><input type="text" ng-model="Street" /></td>    </tr>
+                  <tr>      <td>PostalCode</td> <td colspan=2><input type="text" ng-model="PostalCode" /></td>    </tr>
+                  <tr>      <td>Phone</td>      <td colspan=2><input type="text" ng-model="Phone" /></td>    </tr>
+                  <tr>      <td>Email</td>      <td colspan=2><input type="text" ng-model="Email" /></td>    </tr>
+                  <!--<tr>      <td>RegistrationDate</td>      <td colspan=2><input type="text" ng-model="parcel.RegistrationDate" /></td>    </tr>-->
+                  @*<tr>      <td>Submit</td>      <td colspan=2><input type="click" id="submit" value="Submit"/></td>    </tr>*@
+
+              </table>
+              <input type="submit" id="submit" value="Submit">
+          </form>
+                
+          
+
+        </div>
+    </div>
+
+
+
+   
+</body>
+</html>

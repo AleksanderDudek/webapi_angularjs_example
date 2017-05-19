@@ -1,0 +1,18 @@
+﻿<form ng-app="APIModule" ng-controller="APIController" ng-submit="submit()">
+    <table>
+        <tr>      <td>City</td>      <td colspan=2><input type="text" ng-model="parcel.City" /></td>    </tr>
+        <tr>      <td>PostalCode</td>      <td colspan=2><input type="text" ng-model="parcel.PostalCode" /></td>    </tr>
+        <tr>      <td>Street</td>      <td colspan=2><input type="text" ng-model="parcel.Street" /></td>    </tr>
+        <tr>      <td>Name</td>      <td colspan=2><input type="text" ng-model="parcel.Name" /></td>    </tr>
+        <tr>      <td>Phone</td>      <td colspan=2><input type="text" ng-model="parcel.Phone" /></td>    </tr>
+        <tr>      <td>Email</td>      <td colspan=2><input type="text" ng-model="parcel.Email" /></td>    </tr>
+        <!--<tr>      <td>RegistrationDate</td>      <td colspan=2><input type="text" ng-model="parcel.RegistrationDate" /></td>    </tr>-->
+
+        <tr>
+            <td></td>
+            <td align="right"><input type="button" value="Cancel" ng-redirect-to="#" /></td>
+        </tr>
+    </table>
+    <button type="button" class="btn btn-default" ng-click="saveParcel();">Submit</button>
+</form>
+
